@@ -1,0 +1,31 @@
+[ {
+  "priority" : "1",
+  "ruleName" : "Reject",
+  "condition" : 100.0,
+  "cost" : 10.0,
+  "costDescription" : "N/A"
+}, {
+  "priority" : "2",
+  "ruleName" : "Heavy Parcel",
+  "condition" : 10.0,
+  "cost" : 20.0,
+  "costDescription" : "Cost * weight (kg)"
+}, {
+  "priority" : "3",
+  "ruleName" : "Small Parcel",
+  "condition" : 1500.0,
+  "cost" : 0.03,
+  "costDescription" : "Cost * Volume"
+}, {
+  "priority" : "4",
+  "ruleName" : "Medium Parcel",
+  "condition" : 2500.0,
+  "cost" : 0.04,
+  "costDescription" : "Cost * Volume"
+}, {
+  "priority" : "5",
+  "ruleName" : "Large Parcel",
+  "condition" : 0.0,
+  "cost" : 0.05,
+  "costDescription" : "Cost * Volume"
+} ]
