@@ -7,6 +7,7 @@ import com.exam.parcel.request.ParcelRequest;
 import com.exam.parcel.request.VoucherRequest;
 import com.exam.parcel.response.ParcelResponse;
 import com.exam.parcel.response.VoucherResponse;
+import com.exam.parcel.rule.RuleEnum;
 import com.exam.parcel.rule.RuleType;
 import com.exam.parcel.service.ParcelService;
 import com.exam.parcel.util.ParcelRuleProperties;
@@ -39,11 +40,11 @@ public class ParcelServiceImpl implements ParcelService {
 		Double volumeCost = 0d;
 		Double volume = getParcelVolume(parcel);
 
-		RuleType reject = ParcelRuleProperties.getRuleTypeByRuleName("Reject");
-		RuleType heavyParcel = ParcelRuleProperties.getRuleTypeByRuleName("Heavy Parcel");
-		RuleType smallParcel = ParcelRuleProperties.getRuleTypeByRuleName("Small Parcel");
-		RuleType mediumParcel = ParcelRuleProperties.getRuleTypeByRuleName("Medium Parcel");
-		RuleType largeParcel = ParcelRuleProperties.getRuleTypeByRuleName("Large Parcel");
+		RuleType reject = ParcelRuleProperties.getRuleTypeByRuleName(RuleEnum.REJECT.getRuleName());
+		RuleType heavyParcel = ParcelRuleProperties.getRuleTypeByRuleName(RuleEnum.HEAVY_PARCEL.getRuleName());
+		RuleType smallParcel = ParcelRuleProperties.getRuleTypeByRuleName(RuleEnum.SMALL_PARCEL.getRuleName());
+		RuleType mediumParcel = ParcelRuleProperties.getRuleTypeByRuleName(RuleEnum.MEDIUM_PARCEL.getRuleName());
+		RuleType largeParcel = ParcelRuleProperties.getRuleTypeByRuleName(RuleEnum.LARGE_PARCEL.getRuleName());
 
 		if (parcel.getWeight() > reject.getCondition()) {
 			throw new Exception("Invalid Parcel: Weight exceeded limit of " + reject.getCondition());
